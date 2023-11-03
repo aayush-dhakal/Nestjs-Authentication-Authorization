@@ -1,0 +1,5 @@
+# Initial query resolver defined in app.resolver.ts for graphql to work. To call that query
+- head to http://localhost:5000/graphql then
+=> {
+  index
+}
