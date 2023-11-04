@@ -3,3 +3,34 @@
 => {
   index
 }
+
+# For Login api
+- Login query
+=> query Login($email:String!,$password:String!){
+  login(email:$email,password:$password)
+}
+- Query variable
+=> {
+  "email": "r@g.com",
+  "password": "admin"
+}
+
+# To access data which requires valid token
+- secretDataForAllUsers query
+=> {
+  secretDataForAllUsers
+}
+- Http Headers
+=> {
+  "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiUmFtIiwibGFzdE5hbWUiOiJBZGhpa2FyaSIsImVtYWlsIjoickBnLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5OTA4OTM2NSwiZXhwIjoxNjk5MDk1MzY1fQ.wpQoL6tMDytP87lEmL7nVgHmA3XziupNBJf4IUEuSu8"
+}
+
+# To access data which requires valid token and admin role 
+- secretDataForAdmin query
+=> {
+  secretDataForAdmin
+}
+- Http Headers
+=> {
+  "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3ROYW1lIjoiUmFtIiwibGFzdE5hbWUiOiJBZGhpa2FyaSIsImVtYWlsIjoickBnLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5OTA4OTM2NSwiZXhwIjoxNjk5MDk1MzY1fQ.wpQoL6tMDytP87lEmL7nVgHmA3XziupNBJf4IUEuSu8"
+}
